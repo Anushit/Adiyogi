@@ -1,0 +1,32 @@
+{% include 'frontend/head.html' %}
+{% load static %}
+    <!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title body-tag">
+          <h2>{{posts.title}}</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+          <center><h3 style="color:blue;">{{posts.title_description}}<h3></center>
+            <ul>
+              <li><i class="ri-check-double-line"></i> {{posts.meta_description}}</li>
+
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+            {{posts.content}}
+            </p>
+
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+<!-- End About Us Section -->
+{% include 'frontend/foot.html' %}

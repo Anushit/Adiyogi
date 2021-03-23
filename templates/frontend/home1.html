@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for i in all %}
+        Country - {{i.name}} :<br>
+            {% for j in i.country_name.all %}
+                &nbsp;&nbsp;&nbsp;&nbsp;State - {{j.name}} : <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City -
+                {% for k in j.state_name.all %}
+                    {{k.name}} |
+                {% endfor %}
+                <br>
+            {% endfor %}
+    {% endfor %}
+</body>
+</html>

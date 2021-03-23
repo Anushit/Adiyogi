@@ -1,0 +1,39 @@
+{% include 'frontend/head.html' %}
+{% load static %}
+<section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Products</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+            <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Search Products</h4>
+            <form method="get" action="/SearchResultsView">
+              <input type="text" name="search">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <a href="{% url 'shop' %}"> <li data-filter="*" class="filter-active">All</li></a>
+          <a href="{% url 'Items' %}"><li data-filter=".filter-web">Computer & Electronics</li></a>
+        </ul>
+        {% for prod in products %}
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img {% if prod.image %}src="{{prod.image.url}}" class="img-fluid" alt="" style="height:150px width:150px" {% endif %}></div>
+            <div class="portfolio-info">
+              <h4>{{prod.title}}</h4>
+          </div>
+          </div>
+        </div>
+      </div>
+   {% endfor %}
+</section>
+{% include 'frontend/foot.html' %}
